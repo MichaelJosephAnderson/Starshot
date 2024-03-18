@@ -11,7 +11,7 @@ public class Lever : MonoBehaviour
 
 	#endregion
 	
-	#region Feilds
+	#region Fields
 
 	[SerializeField, Tooltip("Call sign for this lever")]
 	private string leverCallSign;
