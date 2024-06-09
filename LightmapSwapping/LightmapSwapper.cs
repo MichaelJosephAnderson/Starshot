@@ -40,10 +40,6 @@ public class LightmapSwapper : MonoBehaviour
 	[SerializeField, Tooltip("List of all the different light setups for the scene to be set active in order")]
 	private List<GameObject> lightSetupsList;
 	
-	[Header("Temp")]
-	[SerializeField, Tooltip("Drag in the light data object for the bright lightmaps")]
-	public AlternativeLightingData lerpedLightAsset;
-	
 	private SphericalHarmonicsL2[] _probesCurrent;
 	private LightmapData[] _lightMapsData;
 	private int _lightmapIndex;
