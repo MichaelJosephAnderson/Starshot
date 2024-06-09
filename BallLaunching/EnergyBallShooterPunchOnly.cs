@@ -163,13 +163,6 @@ public class EnergyBallShooterPunchOnly : MonoBehaviour
                     ? Vector3.RotateTowards(_shootDirection.normalized, -_grabbingHandTransform.right.normalized, singleStep, 100.0f) 
                     : Vector3.RotateTowards(_shootDirection.normalized, _grabbingHandTransform.right.normalized, singleStep, 100.0f);
             }
-            // else
-            // {
-            //     float singleStep = aimRotateSpeed * Time.deltaTime;
-            //     _shootDirection = _grabbingWithRight 
-            //         ? Vector3.RotateTowards(_shootDirection.normalized, -_grabbingHandObjectVelocity.averageRotation.normalized / 2, _grabbingHandObjectVelocity.averageRotation.magnitude * singleStep / 10, 0) 
-            //         : Vector3.RotateTowards(_shootDirection.normalized, _grabbingHandObjectVelocity.averageRotation.normalized / 2, _grabbingHandObjectVelocity.averageRotation.magnitude * singleStep / 10, 0);
-            // }
         }
         else
         {
@@ -196,10 +189,6 @@ public class EnergyBallShooterPunchOnly : MonoBehaviour
                 }
                 else
                 {
-                    // _lockAngle = false;
-                    // _canPunch = false;
-                    // _postGrabPunch = false;
-                    // _postGrabReset = true;
                     predictorTrail.HidePredictorTrail();
                 }
 
@@ -240,7 +229,7 @@ public class EnergyBallShooterPunchOnly : MonoBehaviour
         //Debug.Log(vel);
         _currentSpawnedBall.SetBallSpeed(vel, true);
 
-        var colPos = _handStartPoint;//col.transform.position;
+        var colPos = _handStartPoint;
         var ballPos = _currentSpawnedBall.transform.position;
         var colDir = (ballPos - colPos).normalized;
         var point1 = ballPos + (colDir * curveMultiplier);
@@ -249,17 +238,6 @@ public class EnergyBallShooterPunchOnly : MonoBehaviour
         if (dot <= straightHitAccuracy && _curveShots && !_isEndGame)
         {
             _currentSpawnedBall.SetCurveMovementParams(colDir);
-            // if (Physics.Raycast(_currentSpawnedBall.transform.position, _shootDirection, out RaycastHit outHit,Mathf.Infinity, shootableSurfaces, QueryTriggerInteraction.Ignore))
-            // {
-            //     if (Physics.Raycast(outHit.point, _shootDirection, out RaycastHit outHit2, Mathf.Infinity, shootableSurfaces, QueryTriggerInteraction.Ignore))
-            //     {
-            //         _currentSpawnedBall.SetCurveMovementParams(_currentSpawnedBall.transform.position, point1, outHit2.point);
-            //     }
-            //     else
-            //     {
-            //         _currentSpawnedBall.SetCurveMovementParams(_currentSpawnedBall.transform.position, point1, outHit.point);
-            //     }
-            // }
         }
 
         _isGrabbingHandle = false;
