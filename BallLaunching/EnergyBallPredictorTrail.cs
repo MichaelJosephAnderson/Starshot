@@ -22,9 +22,6 @@ public class EnergyBallPredictorTrail : MonoBehaviour
 	private Transform predictorTrailStartTransform;
 	
 	[Header("Curve Trail Settings")] 
-	//[SerializeField, Tooltip("Reference to the Curve trail line renderer")]
-	//private LineRenderer curveLineRenderer;
-
 	[SerializeField, Tooltip("Total length of the curved trail")]
 	private float curveTotalDist;
 	
@@ -35,9 +32,6 @@ public class EnergyBallPredictorTrail : MonoBehaviour
 	private float curveTrailResolution;
 
 	[Header("Straight Trail Settings")]
-	//[SerializeField, Tooltip("Reference to the straight line renderer")]
-	//private LineRenderer straightLineRenderer;
-
 	[SerializeField, Tooltip("Total length of the straight trail")]
 	private float straightTotalDist;
 
